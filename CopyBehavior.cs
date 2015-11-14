@@ -176,25 +176,6 @@ namespace Hansoft.Jean.Behavior.CopyBehavior
                 return customColumn;
         }
 
-        // TODO: Move to helper in the Behavior namespace
-        private EHPMReportViewType GetViewType(string viewType)
-        {
-            switch (viewType)
-            {
-                case ("Agile"):
-                    return EHPMReportViewType.AgileMainProject;
-                case ("Scheduled"):
-                    return EHPMReportViewType.ScheduleMainProject;
-                case ("Bugs"):
-                    return EHPMReportViewType.AllBugsInProject;
-                case ("Backlog"):
-                    return EHPMReportViewType.AgileBacklog;
-                default:
-                    throw new ArgumentException("Unsupported View Type: " + viewType);
-
-            }
-        }
-
         private void DoUpdate()
         {
             List<Task> targetItems = targetProjectView.Find(targetFind);
